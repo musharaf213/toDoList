@@ -1,0 +1,357 @@
+/* ==============================
+   TableView container
+   ============================== */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-fixed-cell-size: -1;
+    -fx-font-family: "Verdana";
+    -fx-font-size: 12px;
+}
+
+/* ==============================
+   Header background with vertical lines
+   ============================== */
+.table-view .column-header-background,
+.table-view .nested-column-header {
+    -fx-background-color: #A3AFC9;
+}
+
+.table-view .column-header {
+    -fx-background-color: #A3AFC9;
+    -fx-border-color: #cccccc;       /* grid lines */
+    -fx-border-width: 0 1 1 0;       /* top right bottom left */
+    -fx-background-radius: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-pref-height: 30px;
+    -fx-font-size: 16px;
+}
+
+/* Header text */
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+
+/* ==============================
+   Table rows with horizontal & vertical lines
+   ============================== */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0 1 1 0;
+    -fx-cell-size: 40px;
+    -fx-alignment: CENTER;
+}
+
+/* Done todos */
+.table-row-cell.done {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+/* In-progress todos */
+.table-row-cell.progress {
+    -fx-background-color: #ffd966; /* yellow */
+    -fx-text-fill: black;
+}
+
+/* Selected row (default) */
+.table-row-cell:filled:selected {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+/* Selected done/progress rows */
+.table-row-cell.done:filled:selected,
+.table-row-cell.progress:filled:selected {
+    -fx-background-color: #2196F3; /* blue for selected */
+    -fx-text-fill: white;
+}
+
+/* Hover always on top */
+.table-row-cell:filled:hover,
+.table-row-cell.done:filled:hover,
+.table-row-cell.progress:filled:hover,
+.table-row-cell:filled:selected:hover,
+.table-row-cell.done:filled:selected:hover,
+.table-row-cell.progress:filled:selected:hover {
+    -fx-background-color: #A3AFC9; /* hover color */
+    -fx-text-fill: #212121;        /* hover text color */
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0 1 1 0;
+}
+
+/* Table cells (columns) for vertical lines and default text color */
+.table-cell {
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0 1 0 0; /* right border only */
+    -fx-alignment: CENTER;
+    -fx-text-fill: #212121;
+}
+
+
+.my-button {
+    -fx-background-color: #A3AFC9;
+    -fx-text-fill: white;              /* better contrast */
+    -fx-font-weight: bold;             /* makes label clearer */
+    -fx-padding: 8 16 8 16;            /* more space inside */
+    -fx-background-radius: 8;          /* smoother rounded corners */
+    -fx-border-radius: 8;
+    -fx-border-color: transparent;     /* cleaner look */
+    -fx-cursor: hand;                  /* cursor change on hover */
+    -fx-font-family: "Verdana";
+    -fx-font-size: 12px;
+
+    /* subtle shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 6, 0, 0, 2);
+}
+
+.my-button:hover {
+    -fx-background-color: #8C97B0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 3);
+}
+
+.my-button:pressed {
+    -fx-background-color: #737C96;
+    -fx-translate-y: 1;                /* small press animation */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 1);
+}
+
+/* Dialog background */
+.dialog-pane {
+    -fx-background-color: #f0f4f8;       /* light background */
+    -fx-border-color: #A3AFC9;           /* border color */
+    -fx-padding: 15;
+    -fx-font-family: "Verdana";
+    -fx-font-size: 12px;
+}
+
+/* DialogPane header background */
+.dialog-pane .header-panel {
+    -fx-background-color: #f0f4f8; /* your desired color */
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 10;
+}
+
+/* Header text */
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #2a3b50;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+/* Content text */
+.dialog-pane .content.label {
+    -fx-text-fill: #2a3b50;
+    -fx-font-size: 14px;
+}
+
+/* Buttons */
+.dialog-pane .button {
+    -fx-background-color: #A3AFC9;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 5 15 5 15;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #737C96;
+}
+
+/* ======= DatePicker ======= */
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #A3AFC9;
+    -fx-border-radius: 6;
+    -fx-font-family: "Verdana";
+    -fx-font-size: 12px;
+}
+
+.date-picker:hover {
+    -fx-border-color: #737C96;
+}
+
+.date-picker:focused {
+    -fx-border-color: #4A90E2;
+    -fx-effect: dropshadow(three-pass-box, rgba(74,144,226,0.3), 5, 0, 0, 0);
+}
+
+/* Arrow button inside DatePicker */
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 6;
+}
+.date-picker .arrow {
+    -fx-background-color: #4A90E2;
+}
+
+/* Calendar popup */
+.date-picker-popup {
+    -fx-background-color: white;
+    -fx-border-color: #A3AFC9;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+/* ======= ComboBox ======= */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #A3AFC9;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 4 8;
+    -fx-font-family: "Verdana";
+    -fx-font-size: 12px;
+}
+
+.combo-box:hover {
+    -fx-border-color: #737C96;
+}
+
+.combo-box:focused {
+    -fx-border-color: #4A90E2;
+    -fx-effect: dropshadow(three-pass-box, rgba(74,144,226,0.3), 5, 0, 0, 0);
+}
+
+/* ComboBox dropdown list */
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #A3AFC9;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.combo-box-popup .list-cell {
+    -fx-padding: 6 10;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #A3AFC9;;
+}
+
+.strikethrough {
+    -fx-strikethrough: true;
+}
+
+/* TextField styling */
+.text-field {
+    -fx-border-color: #A3AFC9;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+    -fx-background-color: white;
+}
+
+.text-field:hover {
+    -fx-border-color: #737C96;
+}
+
+.text-field:focused {
+    -fx-border-color: #4A90E2;
+    -fx-effect: dropshadow(three-pass-box, rgba(74,144,226,0.3), 5, 0, 0, 0);
+}
+
+/* TextArea styling */
+.text-area {
+    -fx-border-color: #A3AFC9;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-wrap-text: true;
+}
+
+.text-area:hover {
+    -fx-border-color: #737C96;
+}
+
+.text-area:focused {
+    -fx-border-color: #4A90E2;
+    -fx-effect: dropshadow(three-pass-box, rgba(74,144,226,0.3), 5, 0, 0, 0);
+}
+
+/* Base CheckBox */
+.check-box {
+    -fx-font-family: "Verdana";
+    -fx-font-size: 13px;
+    -fx-padding: 5 0 5 0;
+}
+
+
+/* Hover */
+.check-box:hover .box {
+    -fx-border-color: #737C96;
+}
+
+/* Focus */
+.check-box:focused .box {
+    -fx-border-color: #4A90E2;
+    -fx-effect: dropshadow(three-pass-box, rgba(74,144,226,0.3), 6, 0, 0, 0);
+}
+
+/* Root container for the popup */
+.popup-root {
+    -fx-background-color: #f0f4f8;
+    -fx-border-color: #A3AFC9;
+    -fx-font-family: "Verdana";
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 15;
+}
+
+/* Header label */
+.popup-header {
+    -fx-background-color: #f0f4f8;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-text-fill: #2a3b50;
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 10;
+    -fx-font-family: "Verdana";
+}
+
+/* Content labels */
+.popup-label {
+    -fx-font-size: 14px;
+    -fx-padding: 5 10 5 10;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-font-family: "Verdana";
+}
+
+/* Open Todos */
+.popup-open {
+    -fx-text-fill: #2a3b50;
+    -fx-font-weight: bold;
+    -fx-border-color: #2a3b50;
+}
+
+/* In Progress Todos */
+.popup-progress {
+    -fx-text-fill: #ffd966;
+    -fx-font-weight: bold;
+    -fx-border-color: #ffd966;
+}
+
+/* Done Todos */
+.popup-done {
+    -fx-text-fill: #4CAF50;
+    -fx-font-weight: bold;
+    -fx-border-color: #4CAF50;
+}
+
+/* Close button */
+.popup-button {
+    -fx-background-color: #A3AFC9;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 5 15 5 15;
+}
+
+.popup-button:hover {
+    -fx-background-color: #737C96;
+}
