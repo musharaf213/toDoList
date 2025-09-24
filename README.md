@@ -15,7 +15,9 @@ The application allows you to add, edit, and track tasks with due dates and prio
 - **Icons**: Uses Ikonli Material Design 2 Pack for a polished look.  
 
 ---
-
+## Recommended Java Version
+- **Java JDK 17** 
+---
 ## Setup Instructions
 
 ### 1. Clone the repository
