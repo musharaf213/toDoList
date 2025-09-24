@@ -18,13 +18,51 @@ The application allows you to add, edit, and track tasks with due dates and prio
 
 ## Setup Instructions
 
-### 1. Create a `.env` file in the project root
+### 1. Clone the repository
+```bash
+git clone https://github.com/musharaf213/toDoList.git
+````
+
+---
+### 2. Database Setup
+
+The application uses a MySQL database to store todos.
+The connection is established using the credentials stored in .env (DB_URL, DB_USER, DB_PASSWORD).
+
+Create the following table in your database:
+````
+CREATE TABLE TODOS (
+    id_todo INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    priority VARCHAR(50) NOT NULL,
+    due_date DATE,
+    is_done INT NOT NULL DEFAULT 0
+);
+````
+Table Columns
+
+- id_todo → Unique ID for each task
+- name → Title of the task (required)
+- description → Task description (required)
+- priority → Priority level (required, e.g., Low, Medium, High)
+- due_date → Due date (optional)
+- is_done → Status (1 = open, 2 = pending, completed)
+  
+Data Access
+
+- The TodoDao class provides all CRUD operations for this table:
+- list() → Fetch all todos
+- add() → Insert a new todo
+- edit() → Update an existing todo
+- remove() → Delete a todo
+- markAsDone() → Mark a todo as done or undone
+
+---
+### 3. Create a `.env` file in the project root
 Set the following parameters in your `.env` file:
 ```
 DB_URL=your_database_url
 DB_USER=your_username
 DB_PASSWORD=your_password
 ````
-### 2. Clone the repository
-```bash
-git clone https://github.com/musharaf213/toDoList.git
