@@ -118,6 +118,8 @@ public class TodoAddView {
 
         layout.getChildren().addAll(order,message);
 
+        //button action
+
         add.setOnAction(actionEvent -> {
             if(!nameField.getText().isEmpty() && !descriptionField.getText().isEmpty()){
                 if(nameField.getText().getBytes(StandardCharsets.UTF_8).length < 256 && descriptionField.getText().getBytes(StandardCharsets.UTF_8).length < 65536){

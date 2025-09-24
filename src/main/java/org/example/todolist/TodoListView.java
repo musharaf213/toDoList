@@ -41,11 +41,14 @@ public class TodoListView {
         Font font  = Font.font("Verdana",12);
 
         BorderPane layout = new BorderPane();
+
+        //tableView
         ObservableList<Todo> data = FXCollections.observableArrayList(todoDao.list());
         ObservableList<Todo> observableList = FXCollections.observableArrayList(data);
 
         TableView<Todo> tableView = new TableView<>(observableList);
 
+        //defining columns
         TableColumn<Todo, Number> rowNumCol = new TableColumn<>("Row");
         rowNumCol.setCellValueFactory(cellData ->
                 javafx.beans.binding.Bindings.createIntegerBinding(() ->
@@ -125,7 +128,7 @@ public class TodoListView {
                 if (empty || value == null) {
                     setGraphic(null);
                 } else {
-                    checkBox.setSelected(value == 3); // checked only if 3
+                    checkBox.setSelected(value == 3);
                     setGraphic(checkBox);
                 }
             }
@@ -149,6 +152,7 @@ public class TodoListView {
         });
         doneCol.prefWidthProperty().bind(tableView.widthProperty().multiply(0.1));
 
+        //tableView settings
         rowNumCol.setResizable(false);
         nameCol.setResizable(false);
         desCol.setResizable(false);
@@ -167,6 +171,7 @@ public class TodoListView {
         horizontal.setSpacing(10);
         horizontal.setPadding(new Insets(10,10,10,10));
 
+        //Buttons
         Button add = new Button("Add");
         add.getStyleClass().add("my-button");
         FontIcon icon = new FontIcon("mdi2b-book-plus");
@@ -218,6 +223,8 @@ public class TodoListView {
 
         horizontal.getChildren().addAll(add,edit,markInProgress,markAsDone, markAsUndone,delete,showInformation,reset);
 
+        //button actions
+
         add.setOnAction(e -> {
             stage.setScene(todoAddView.getView());
         });
@@ -239,7 +246,6 @@ public class TodoListView {
             alert.setGraphic(alertIcon);
 
             DialogPane dialogPaneAlert = alert.getDialogPane();
-            // Attach the CSS file directly to the Alert
             dialogPaneAlert.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
 
             Optional<ButtonType> result = alert.showAndWait();
@@ -277,7 +283,7 @@ public class TodoListView {
             dialog.setGraphic(editIcon);
 
             VBox contentBox  =new VBox(5);
-            contentBox.getChildren().addAll(dialog.getEditor(), invalid); // editor is the TextField
+            contentBox.getChildren().addAll(dialog.getEditor(), invalid);
             dialog.getDialogPane().setContent(contentBox);
 
             DialogPane dialogPaneEdit = dialog.getDialogPane();
@@ -366,7 +372,7 @@ public class TodoListView {
 
             pair.getChildren().addAll(header,infoIcon);
 
-            // Content labels
+            // labels
             Label openLabel = new Label("Open Todos: " + countOpen);
             openLabel.getStyleClass().addAll("popup-label", "popup-open");
 
@@ -389,7 +395,6 @@ public class TodoListView {
             buttonBox.setAlignment(Pos.CENTER);
             buttonBox.setPadding(new Insets(10));
 
-            // Root container
             VBox root = new VBox(pair, content, buttonBox);
             root.getStyleClass().add("popup-root");
             root.setAlignment(Pos.CENTER);
@@ -435,7 +440,4 @@ public class TodoListView {
         }
         return scene;
     }
-
-
-
 }

@@ -1,6 +1,5 @@
 package org.example.todolist;
 
-import io.github.cdimascio.dotenv.Dotenv;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -124,6 +123,7 @@ public class TodoEditView{
 
         layout.getChildren().addAll(order,message);
 
+        //button action
         edit.setOnAction(actionEvent -> {
             if(!nameField.getText().isEmpty() && !descriptionField.getText().isEmpty()){
                 if(nameField.getText().getBytes(StandardCharsets.UTF_8).length < 256 && descriptionField.getText().getBytes(StandardCharsets.UTF_8).length < 65536){
