@@ -15,7 +15,9 @@ The application allows you to add, edit, and track tasks with due dates and prio
 - **Icons**: Uses Ikonli Material Design 2 Pack for a polished look.  
 
 ---
-
+## Recommended Java Version
+- **Java JDK 17** 
+---
 ## Setup Instructions
 
 ### 1. Clone the repository
@@ -27,7 +29,7 @@ git clone https://github.com/musharaf213/toDoList.git
 ### 2. Database Setup
 
 The application uses a MySQL database to store todos.
-The connection is established using the credentials stored in .env (DB_URL, DB_USER, DB_PASSWORD).
+The connection is established using the credentials stored in a .env file (DB_URL, DB_USER, DB_PASSWORD).
 
 Create the following table in your database:
 ````
