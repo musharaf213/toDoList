@@ -27,7 +27,6 @@
             <version>17.0.6</version>
         </dependency>
 
-        <!-- Testing -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -71,7 +70,6 @@
 
     <build>
         <plugins>
-            <!-- Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -82,7 +80,6 @@
                 </configuration>
             </plugin>
 
-            <!-- JavaFX Plugin (for running inside Maven) -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -91,12 +88,12 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <!-- NOTICE: for shade use only the class, not module/class -->
                             <mainClass>org.example.todolist.Main</mainClass>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+            <!-- Maven shade plugin to create fat jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>

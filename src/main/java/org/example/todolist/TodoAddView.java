@@ -24,8 +24,8 @@ public class TodoAddView {
         this.todoDao = todoDao;
         this.todoListView = todoListView;
         this.stage  =stage;
-        stage.setWidth(TodoListApplication.WIDTH);
-        stage.setHeight(TodoListApplication.HEIGHT);
+//        stage.setWidth(TodoListApplication.WIDTH);
+//        stage.setHeight(TodoListApplication.HEIGHT);
     }
 
     public Scene getView(){
