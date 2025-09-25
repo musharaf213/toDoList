@@ -23,7 +23,6 @@
     -fx-font-size: 16px;
 }
 
-/* Header text */
 .table-view .column-header .label {
     -fx-text-fill: white;
     -fx-font-weight: bold;
@@ -82,13 +81,13 @@
 
 .my-button {
     -fx-background-color: #A3AFC9;
-    -fx-text-fill: white;              /* better contrast */
-    -fx-font-weight: bold;             /* makes label clearer */
-    -fx-padding: 8 16 8 16;            /* more space inside */
-    -fx-background-radius: 8;          /* smoother rounded corners */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16 8 16;
+    -fx-background-radius: 8;
     -fx-border-radius: 8;
-    -fx-border-color: transparent;     /* cleaner look */
-    -fx-cursor: hand;                  /* cursor change on hover */
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
     -fx-font-family: "Verdana";
     -fx-font-size: 12px;
 
